@@ -1,0 +1,58 @@
+from utils import add_movie, delete_movie, search_movie, save_to_file, load_from_file
+
+app_name = Фильмдер рейтингі базасы
+VERSION = (1, 2)
+
+def recursive_countdown(n)
+    Рекурсия мысалы
+    if n == 0
+        print(Санау аяқталды!n)
+        return
+    print(n)
+    recursive_countdown(n - 1)
+
+def list_movies(movies)
+    Барлық фильмдерді шығару
+    if not movies
+        print(База бос.)
+        return
+    print(n🎬 Барлық фильмдер)
+    for v in movies.values()
+        print(f- {v['title']} ({v['year']})  Рейтинг {v['rating']}  Жанрлар {', '.join(v['genres'])})
+
+def menu()
+    Басты мәзір — басқа функцияларды шақырады
+    movies = load_from_file()
+    while True
+        print(fn--- {app_name} v{VERSION[0]}.{VERSION[1]} ---)
+        print(1. Фильм қосу)
+        print(2. Барлық фильмдер)
+        print(3. Іздеу)
+        print(4. Жою)
+        print(5. Файлға сақтау)
+        print(6. Рекурсия мысалы (кері санау))
+        print(7. Шығу)
+        choice = input(Таңдауыңыз (1-7) ).strip()
+
+        if choice == 1
+            add_movie(movies)
+        elif choice == 2
+            list_movies(movies)
+        elif choice == 3
+            search_movie(movies)
+        elif choice == 4
+            delete_movie(movies)
+        elif choice == 5
+            save_to_file(movies)
+        elif choice == 6
+            recursive_countdown(3)
+        elif choice == 7
+            save_to_file(movies)
+            print(Шығу алдында мәліметтер сақталды.)
+            recursive_countdown(3)
+            break
+        else
+            print(Қате таңдау! 1–7 аралығында таңдаңыз.)
+
+if __name__ == __main__
+    menu()
